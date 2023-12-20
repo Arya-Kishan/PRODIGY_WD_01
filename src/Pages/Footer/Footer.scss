@@ -1,0 +1,78 @@
+@import '../../partial';
+
+.mainFooter {
+    width: 100%;
+    height: 60vh;
+    display: grid;
+    grid-template-rows: .2fr .7fr .1fr;
+    background: linear-gradient(aqua 20%, rgb(11, 118, 118) 80%);
+    padding: 1% 5%;
+
+    &>div:nth-child(1) {
+        border-bottom: 2px solid white;
+        display: grid;
+        grid-template-columns: 2fr .7fr .3fr;
+
+        &>div {
+            @include flex(column, center, flex-start, 20px, normal);
+        }
+
+        &>div:nth-child(1) {
+            @include flex(row, flex-start, center, 20px, normal);
+        }
+    }
+
+    &>div:nth-child(2) {
+        border-bottom: 2px solid white;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+        &>div {
+            @include flex(column, center, flex-start, 20px, normal);
+        }
+
+        &>div:nth-child(4) {
+            input {
+                outline: none;
+                border: none;
+                background-color: white;
+                height: 100%;
+                color: blue;
+            }
+
+            img {
+                width: 35px;
+                padding: 2px;
+                background-color: rgb(236, 231, 231);
+            }
+
+            p {
+                @include flex(row, center, flex-start, 0px, normal);
+            }
+        }
+    }
+
+    &>div:nth-child(3) {
+        @include flex(column, center, center, 0px, normal);
+    }
+}
+
+@media screen and (max-width:550px) {
+    .mainFooter {
+
+        &>div:nth-child(1) {
+            &>div:nth-child(1) {
+                display: none;
+            }
+        }
+
+        &>div:nth-child(2) {
+            grid-template-columns: 1fr 1fr;
+
+            .address,
+            .news {
+                display: none;
+            }
+        }
+    }
+}

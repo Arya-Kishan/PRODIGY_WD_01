@@ -1,0 +1,190 @@
+@import '../../partial';
+
+.mainThird {
+    background: url("wave3.svg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    box-shadow: inset 3px 3px 5px white;
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px 0px;
+    background-color: aqua;
+    display: grid;
+    place-items: center;
+    gap: 100px;
+    position: relative;
+    overflow: hidden;
+
+    &>div:nth-child(1) {
+        z-index: 2;
+        @include flex(column, center, center, 20px, normal);
+        padding: 10px;
+
+        h1 {
+            font-size: 50px;
+        }
+
+        h3 {
+            font-size: 30px;
+        }
+
+        p {
+            font-size: 20px;
+            width: 50%;
+        }
+    }
+
+    &>div:nth-child(2) {
+        @include flex(row, space-evenly, center, 20px, wrap);
+        width: 100%;
+        z-index: 2;
+
+        .box {
+            @include flex(column, center, center, 0px, wrap);
+            height: 140px;
+            width: 150px;
+            background-color: #31CACA;
+            text-align: center;
+            transition: all ease-in-out .3s;
+            box-shadow: 0 0 5px 3px rgb(2, 106, 106);
+
+            img {
+                width: 60%;
+                position: relative;
+                top: -40px;
+            }
+
+            h3 {
+                width: 100%;
+                font-size: 18px;
+                position: relative;
+                top: -20px;
+            }
+
+            &:hover {
+                transform: translateY(-20px);
+                box-shadow: 0 0 5px 3px rgb(0, 78, 78);
+            }
+        }
+    }
+
+    &>div:nth-child(3) {
+        background-color: rgb(49, 202, 202);
+        width: 80%;
+        height: 60vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+        padding: 0 20px;
+        position: relative;
+        overflow: hidden;
+        z-index: 2;
+
+        &>div:nth-child(1) {
+            @include flex(column, center, flex-start, 15px, wrap);
+            padding: 10px;
+            z-index: 2;
+
+            p {
+                @include flex(row, flex-start, center, 2px, wrap);
+                color: rgb(35, 62, 67);
+
+                img {
+                    width: 20px;
+                }
+            }
+
+            button {
+                border: 2px solid white;
+            }
+        }
+
+        &>div:nth-child(2) {
+            z-index: 2;
+
+            img {
+                width: 80%;
+            }
+        }
+
+        .circle {
+            width: 60%;
+            height: 100%;
+            background-color: rgb(32, 184, 184);
+            border-radius: 50% 50% 0% 50%;
+            @include posA(55%, 78%);
+            z-index: 1;
+        }
+
+    }
+
+    .randomCircle1 {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: rgba(23, 136, 136, 0.214);
+        @include posA(20%, 10%);
+        z-index: 1;
+        box-shadow: 2px 2px 5px black;
+        z-index: 1;
+    }
+
+    .randomCircle2 {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: rgba(23, 136, 136, 0.214);
+        @include posA(40%, 80%);
+        z-index: 1;
+        box-shadow: 2px 2px 5px black;
+        z-index: 1;
+    }
+
+
+}
+
+
+@media screen and (max-width:550px) {
+    .mainThird {
+
+        &>div:nth-child(1) {
+            p {
+                display: none;
+            }
+        }
+
+        &>div:nth-child(2) {
+            h3 {
+                font-size: 17px;
+            }
+        }
+
+        &>div:nth-child(3) {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            
+            &>div:nth-child(1) {
+                @include flex(column, center, center, 15px, wrap);
+                
+            }
+
+            span {
+                display: none;
+            }
+        }
+
+        .randomCircle1 {
+            width: 100px;
+            height: 100px;
+            top: 10%;
+        }
+
+        .randomCircle2 {
+            width: 100px;
+            height: 100px;
+            top: 80%;
+        }
+
+    }
+}

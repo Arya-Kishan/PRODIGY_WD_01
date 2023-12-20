@@ -3,10 +3,67 @@
     margin: 0;
     box-sizing: border-box;
     color: white;
-    background-color: black;
     background: transparent;
+    scroll-behavior: smooth;
 }
 body{
     width: 100%;
     min-height: 100vh;
+}
+button{
+    border: none;
+    padding: 5px 8px;
+    margin: 5px;
+    border-radius: 10px;
+}
+button:hover{
+    background-color: rgb(11, 84, 84);
+    color: yellow;
+    border-radius: 30px;
+}
+h1{
+    font-size: 50px;
+}
+h3{
+    font-size: 30px;
+}
+@media screen and (max-width:550px) {
+    h1{
+        font-size: 30px;
+    }
+}
+
+
+.speaker{
+    animation: vibrate 5s linear infinite;
+}
+
+@keyframes vibrate {
+    0%{
+        transform: translatey(0px);
+    }
+    50%{
+        transform: translatey(-5px);
+
+    }
+    100%{
+        transform: translatey(0px);
+    }
+}
+
+.circle{
+    animation: vibrate 3s linear infinite;
+}
+
+@keyframes vibrate {
+    0%{
+        transform: translatey(0px);
+    }
+    50%{
+        transform: translatey(-10px);
+
+    }
+    100%{
+        transform: translatey(0px);
+    }
 }
