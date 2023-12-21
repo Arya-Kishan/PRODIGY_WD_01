@@ -8,31 +8,37 @@
 
     .firstText {
         @include posA(50%, 50%);
-        @include flex(column,center,center,40px,normal);
-        background: linear-gradient(transparent,black);
+        @include flex(column, center, center, 40px, wrap);
+        background: linear-gradient(transparent, black);
         pointer-events: none;
         width: 100%;
         height: 100vh;
 
         h1 {
-            font-size: 60px;
-            border-bottom: 2px solid black;
+            border-bottom: 2px solid aqua;
+            color: aqua;
         }
-        i{
+
+        i {
             font-size: 40px;
+            color: aqua;
         }
-        p{
+
+        p {
             font-size: 20px;
             width: 60%;
+            color: aqua;
         }
-        button{
+
+        button {
             padding: 8px 12px;
             border-radius: 10px;
             border: none;
-            background-color: #F4B8AF;
-            border: 2px solid white;
+            background-color: aqua;
+            border: 2px solid aqua;
             pointer-events: all;
-            &:hover{
+
+            &:hover {
                 background-color: aqua;
                 color: black;
             }
@@ -40,27 +46,23 @@
     }
 
     @media screen and (max-width:550px) {
-        .firstText {
-            @include flex(column,center,center,20px,normal);
-            h1 {
-                font-size: 30px;
-                border-bottom: none;
+  
+            .firstText {
+                @include flex(column, center, center, 20px, wrap);
+
+                h1 {
+                    border-bottom: none;
+                }
+
+                i {
+                    font-size: 20px;
+                }
+
+                p {
+                    font-size: 15px;
+                }
             }
-            i{
-                font-size: 20px;
-            }
-            p{
-                font-size: 15px;
-                width: 60%;
-            }
-            button{
-                padding: 8px 12px;
-                border-radius: 10px;
-                border: none;
-                background-color: #F4B8AF;
-                border: 2px solid white;
-            }
-        }
+        
     }
 
 

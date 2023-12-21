@@ -6,7 +6,7 @@ export default function Footer() {
         <div className='mainFooter' id='contact'>
 
             <div>
-                <div className='footerHead'><img src="m1.png" alt="" /><h2>Expert Talk</h2></div>
+                <div className='footerHead'><img src="m3.png" alt="" /><h2>Expert Talk</h2></div>
                 <div>Ready to Boost Website ?</div>
                 <div><button>Order Now</button></div>
             </div>
@@ -33,7 +33,7 @@ export default function Footer() {
 
                 <div className='news'>
                     <h2>News Letter</h2>
-                    <p><input type="text" /><img src="m2.png" alt="" /></p>
+                    <p><input type="text" /><img src="m4.png" alt="" /></p>
                     <span>Subscribe</span>
                 </div>
 

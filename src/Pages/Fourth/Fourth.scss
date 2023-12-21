@@ -3,37 +3,47 @@
 .mainFourth {
     width: 100%;
     min-height: 100vh;
-    background-color: aqua;
+    background-color: rgb(17, 115, 115);
     text-align: center;
     overflow: hidden;
-    @include flex(column, center, center, 10px, normal);
+    display: grid;
+    grid-template-rows: .1fr .9fr;
+    place-items: center;
     position: relative;
 
     .fourth {
         z-index: 2;
         width: 80%;
+        height: 100%;
         display: grid;
         height: 100%;
         grid-template-columns: 1fr 1fr;
         place-items: center;
 
         .fourth-left {
-            width: 90%;
+            @include flex(column, center, center, 10px, wrap);
+            width: 100%;
             height: 100%;
-            @include flex(column, space-evenly, center, 10px, normal);
+            overflow: hidden;
 
-            .feedback {
-                @include flex(column, center, center, 10px, normal);
-                padding: 10px;
-                width: 80%;
+            .swiper {
+                width: 60%;
+                height: 50%;
                 box-shadow: 0 0 8px 5px white;
-
-                .profile {
-                    img {
-                        width: 30%;
-                    }
-                }
             }
+
+            .swiper-slide {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .swiper-slide img {
+                width: 100px;
+                object-fit: contain;
+            }
+
         }
 
         .fourth-right {
@@ -46,8 +56,8 @@
 
             .circle1 {
                 background-color: rgb(26, 138, 138);
-                height: 60%;
-                width: 60%;
+                height: 300px;
+                width: 300px;
                 padding-left: 0;
                 border-radius: 50%;
                 @include posA(30%, 50%);
@@ -56,8 +66,8 @@
 
             .circle2 {
                 background-color: aqua;
-                height: 70%;
-                width: 70%;
+                height: 350px;
+                width: 350px;
                 padding-left: 0;
                 border-radius: 50%;
                 @include posA(30%, 50%);
@@ -65,9 +75,9 @@
             }
 
             .circle3 {
-                background: rgb(13, 120, 120);
-                height: 80%;
-                width: 80%;
+                background: linear-gradient(#68613C,white);
+                height: 400px;
+                width: 400px;
                 padding-left: 0;
                 border-radius: 50%;
                 @include posA(30%, 50%);
@@ -96,17 +106,14 @@
         gap: 50px;
 
         .fourth {
+            height: 100%;
             display: flex;
-
+            overflow: hidden;
+            
             .fourth-left {
-                h1 {
-                    display: none;
-                }
-
-                &>p {
-                    display: none;
-                }
+                width: 100%;
             }
+            
 
             .fourth-right {
                 display: none;
@@ -121,20 +128,6 @@
         .fourth {
             grid-template-columns: 1fr;
             grid-template-rows: 1fr 1fr;
-
-            .fourth-left {
-                &>p {
-                    display: none;
-                }
-
-                .description {
-                    height: 30%;
-                    white-space: wrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-
-                }
-            }
         }
     }
 }

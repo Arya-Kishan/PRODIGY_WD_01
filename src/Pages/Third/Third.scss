@@ -4,11 +4,10 @@
     background: url("wave3.svg");
     background-repeat: no-repeat;
     background-position: bottom;
-    box-shadow: inset 3px 3px 5px white;
     width: 100%;
     min-height: 100vh;
     padding: 40px 0px;
-    background-color: aqua;
+    background: linear-gradient(aqua 20%,rgb(17, 115, 115) 80%);
     display: grid;
     place-items: center;
     gap: 100px;
@@ -19,14 +18,6 @@
         z-index: 2;
         @include flex(column, center, center, 20px, normal);
         padding: 10px;
-
-        h1 {
-            font-size: 50px;
-        }
-
-        h3 {
-            font-size: 30px;
-        }
 
         p {
             font-size: 20px;
@@ -54,7 +45,7 @@
                 top: -40px;
             }
 
-            h3 {
+            p {
                 width: 100%;
                 font-size: 18px;
                 position: relative;
@@ -100,10 +91,11 @@
         }
 
         &>div:nth-child(2) {
+            @include flex(row, center, center, 0px, wrap);
             z-index: 2;
 
             img {
-                width: 80%;
+                width: 60%;
             }
         }
 
@@ -154,8 +146,18 @@
         }
 
         &>div:nth-child(2) {
-            h3 {
-                font-size: 17px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            place-items: center;
+            gap: 30px;
+            padding: 0 30px;
+            .box{
+                width: 120px;
+                height: 120px;
+                p{
+                    font-size: 15px;
+                }
             }
         }
 

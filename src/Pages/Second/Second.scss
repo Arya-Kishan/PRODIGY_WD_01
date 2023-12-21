@@ -10,6 +10,7 @@
     background-color: aqua;
     place-items: center;
     position: relative;
+    overflow-x: hidden;
 
     img {
         width: 80%;
@@ -25,9 +26,10 @@
         p{
             font-size: 20px;
         }
-        @include flex(column,center,flex-start,30px,normal);
+        @include flex(column,center,flex-start,30px,wrap);
         button {
-            border: 2px solid white;
+            border: 2px solid aqua;
+            background-color: rgb(22, 122, 122);
             font-size: 15px;
             &:hover{
                 background-color: yellow;
@@ -41,7 +43,16 @@
         width: 100px;
         padding-left: 0;
         border-radius: 50%;
-        @include posA(30%,30%);
+        @include posA(60%,30%);
+        z-index: 1;
+    }
+    .circle2{
+        background-color: rgb(9, 223, 223);
+        height: 200px;
+        width: 200px;
+        padding-left: 0;
+        border-radius: 50%;
+        @include posA(70%,70%);
         z-index: 1;
     }
     
@@ -50,22 +61,28 @@
 
 @media screen and (max-width:1200px) {
     .mainSecond {
-        height: 80vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
     
         img {
-            width: 100%;
+            width: 70%;
         }
     
         &>div {
-            h1{
-                font-size: 30px;
-            }
-            h3{
-                font-size: 20px;
-            }
+            padding: 70px;
+            text-align: center;
+            @include flex(column,space-evenly,center,30px,wrap);
             p{
                 font-size: 15px;
             }
+        }
+
+        .circle1{
+            @include posA(30%,10%);
+        }
+        .circle2{
+            @include posA(50%,50%);
         }
         
     }
@@ -73,19 +90,12 @@
 
 @media screen and (max-width:550px) {
     .mainSecond {
-        height: 40vh;
     
         img {
-            width: 100%;
+            width: 90%;
         }
     
         &>div {
-            h1{
-                font-size: 20px;
-            }
-            h3{
-                font-size: 20px;
-            }
             p{
                 display: none;
             }

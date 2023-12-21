@@ -50,7 +50,6 @@
     @media screen and (max-width:1200px) {
         @include flex(row, space-between, center, 0px, nowrap);
         padding-right: 10px;
-        position: relative;
 
         img{
             display: flex;

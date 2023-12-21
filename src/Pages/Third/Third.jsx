@@ -1,13 +1,57 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import './Third.scss'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/all'
 
 const arr = ["Email Marketing", "Monthly SEO", "Search Ranking", "Search"]
 export default function Third() {
 
-    return (
-        <div className='mainThird' id='service'>
+    const parent = useRef(null)
+    gsap.registerPlugin(ScrollTrigger)
 
-            <div>
+    useEffect(() => {
+
+        const ctx = gsap.context(() => {
+
+            gsap.from(".thirdDiv1", {
+                y:100,
+                opacity:0,
+                scrollTrigger: ".thirdDiv1"
+            })
+            gsap.from(".thirdDiv2", {
+                y:100,
+                opacity:0,
+                scrollTrigger: ".thirdDiv2"
+            })
+            gsap.from(".thirdDiv3", {
+                y:100,
+                opacity:0,
+                scrollTrigger: ".thirdDiv3"
+            })
+
+            gsap.to(".thirdDiv3", {
+                scale:1.2,
+                scrollTrigger: {
+                    trigger: ".thirdDiv3",
+                    // markers: true,
+                    start: "0% 0%",
+                    end: "80% 2%",
+                    scrub: 1,
+                }
+            })
+
+
+        }, parent)
+
+        return () => ctx.revert();
+
+    }, [])
+
+
+    return (
+        <div className='mainThird' id='service' ref={parent}>
+
+            <div className='thirdDiv1'>
                 <h3>Our Services</h3>
                 <h1>What we Do</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia ullam, corporis, error odio voluptate cupiditate similique blanditiis exercitationem placeat at voluptates laborum! Molestias natus eum tempore quo doloribus facilis provident, pariatur veniam repellat omnis quisquam. Vero nam quae commodi doloribus.?</p>
@@ -15,12 +59,12 @@ export default function Third() {
 
 
 
-            <div>
+            <div className='thirdDiv2'>
                 {
                     arr.map((e, i) => (
                         <div className="box" key={i}>
                             <img className='speaker' src={`s3p${i + 1}.png`} alt="" srcSet="" />
-                            <h3>{e}</h3>
+                            <p>{e}</p>
                         </div>
                     ))
                 }
@@ -28,7 +72,7 @@ export default function Third() {
 
 
 
-            <div>
+            <div className='thirdDiv3'>
                 <div>
                     <h1>Email Marketing</h1>
                     <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam inventore tempore architecto voluptatum labore illo in voluptas? Similique suscipit voluptatum, consequuntur eum harum hic atque incidunt labore, quis illum nobis.</span>

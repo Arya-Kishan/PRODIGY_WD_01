@@ -5,7 +5,7 @@
     height: 60vh;
     display: grid;
     grid-template-rows: .2fr .7fr .1fr;
-    background: linear-gradient(aqua 20%, rgb(11, 118, 118) 80%);
+    background: linear-gradient(rgb(17, 115, 115), aqua);
     padding: 1% 5%;
 
     &>div:nth-child(1) {
@@ -43,7 +43,7 @@
             img {
                 width: 35px;
                 padding: 2px;
-                background-color: rgb(236, 231, 231);
+                background-color: rgb(5, 113, 113);
             }
 
             p {

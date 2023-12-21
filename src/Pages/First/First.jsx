@@ -17,10 +17,10 @@ export default function First() {
 
         <i>We are Professional</i>
 
-        <h1>DIGITAL MARKETING</h1>
+        <h1>DIGITAL MARKETER</h1>
 
-        <p>Learn more about this fascinating miracle that we call our home , Planet Earth Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Vel libero quia doloremque veniam provident nostrum..</p>
+        <p>Learn more about this fascinating miracle that we call digital Marketing a fascinating and adventourous exploration 
+        with Kakashi Sensei in the world of Naruto Verse along with Carry Minati i.e Ajay Nagar</p>
         <button onClick={handleNavigate}>EXPLORE</button>
 
       </div>

@@ -28,10 +28,10 @@ export default function Navbar() {
             {!show ? <img onClick={handleNav1} src="ham.png" alt="" /> : <img onClick={handleNav2} src="cross.png" alt="" />}
 
             <ul ref={ul}>
-                <li><a href="#about">About</a></li>
-                <li><a href="#service">Service</a></li>
-                <li><a href="#testimonial">Testimonial</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li onClick={handleNav2}><a href="#about">About</a></li>
+                <li onClick={handleNav2}><a href="#service">Service</a></li>
+                <li onClick={handleNav2}><a href="#testimonial">Testimonial</a></li>
+                <li onClick={handleNav2}><a href="#contact">Contact</a></li>
             </ul>
         </div>
     )
